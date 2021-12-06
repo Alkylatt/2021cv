@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳暄興 | 多媒體概論</title>
+
+    <style>
+        .memeImage {
+            border: black 1px solid;
+            width: 400px;
+            padding: 5px;
+            border-radius: 20px;
+            box-shadow: rgba(0,0,0,0.5) 5px 5px;
+        }
+        .memeImage:hover {
+            position: relative;
+            left: 4px;
+            top: 4px;
+            box-shadow: rgba(0,0,0,0.5) 1px 1px;
+        }
+
+
+        .spinningImage:hover {
+            /* animation */
+            animation-name: barrelRoll;
+            animation-duration: 10ms;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes barrelRoll {
+            from {
+                transform: rotate(0deg);
+            } to {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <img src="images/meme.jpg" alt="programming meme" class="memeImage" id="memeImage"><br>
+    <!-- spam text canvas -->
+    <div style="position: absolute; top: 0; z-index: -999;">
+        <p id="memeTextbox" style="font-size: 30px;"></p>
+    </div>
+
+    <table cellspacing="20">
+        <th>
+            <td>
+                <img src="images/crazyDoggo-cropped.png" alt="Dogg" style="margin: 10px;" class="spinningImage" id="spinningImage">
+            </td>
+            <td>
+                <h1>陳暄興</h1>
+
+                <p><em><strong><a href="https://www.ntue.edu.tw/" target="_blank">國立台北教育大學</a></strong>資訊科學系</em></p>
+                <p>國立台北教育大學，資訊科學系，資二甲的一名學生</p>
+            </td>
+        </th>
+    </table>
+
+
+
+    <hr>
+
+    <h1>喜歡</h1>
+    <ul>
+        <li>呼吸</li>
+        <li>睡覺</li>
+        <li>眨眼</li>
+    </ul>
+
+    <h1>不喜歡</h1>
+    <ul>
+        <li>嗆到</li>
+        <li>噎到</li>
+        <li>咳嗽</li>
+        <li>過敏</li>
+    </ul>
+
+
+    <h1>工作經驗</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>時間</th>
+                <th>職位</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2016 - 2019</td>
+                <td>不是國立台北教育大學 資訊科學系 學生</td>
+            </tr>
+            <tr>
+                <td>2019 -</td>
+                <td>國立台北教育大學 資訊科學系 學生</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <h1>工作技能</h1>
+    <table class="table">
+        <tr>
+            <td>PHP</td>
+            <td>★☆☆☆☆</td>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>★★☆☆☆</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>★☆☆☆☆</td>
+        </tr>
+        <tr>
+            <td>Java</td>
+            <td>★☆☆☆☆</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>★☆☆☆☆</td>
+        </tr>
+        <tr>
+            <td>C++</td>
+            <td>★★☆☆☆</td>
+        </tr>
+        <tr>
+            <td>C#</td>
+            <td>☆☆☆☆☆</td>
+        </tr>
+    </table>
+
+
+    <hr>
+
+    <a href="sports.html">My sports</a>
+    <a href="contacts.html">Contacts</a>
+
+
+
+</body>
+</html>
+
+<script>
+    document.getElementById("memeImage").addEventListener("click", function() {
+        window.alert("這不是按鈕，請不要按他");
+    });
+
+
+    let textBoxSpam;
+    document.getElementById("spinningImage").addEventListener("mouseover", function() {
+        textBoxSpam = setInterval(function() {
+            document.getElementById("memeTextbox").innerText += "汪汪汪"}, 1);
+    });
+    document.getElementById("spinningImage").addEventListener("mouseleave", function() {
+        clearInterval(textBoxSpam);
+        document.getElementById("memeTextbox").innerText = "";
+    });
+</script>
